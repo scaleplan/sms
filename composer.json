@@ -1,0 +1,15 @@
+{
+    "name": "scaleplan/sms",
+    "description": "Scaleplan SMS component",
+    "autoload": {
+        "psr-4": {
+            "Scaleplan\\SMS\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "require": {
+        "php": ">=7.2"
+    }
+}
