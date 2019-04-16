@@ -3,7 +3,7 @@
     "description": "Scaleplan SMS component",
     "autoload": {
         "psr-4": {
-            "Scaleplan\\SMS\\": "src/"
+            "Scaleplan\\Sms\\": "src/"
         },
         "files": [
             "src/functions.php"
