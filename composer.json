@@ -4,10 +4,7 @@
     "autoload": {
         "psr-4": {
             "Scaleplan\\Sms\\": "src/"
-        },
-        "files": [
-            "src/functions.php"
-        ]
+        }
     },
     "require": {
         "php": ">=7.2"
