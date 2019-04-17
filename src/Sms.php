@@ -135,6 +135,8 @@ class Sms implements SmsInterface
         /** @var RequestInterface $request */
         $request = get_required_container(RequestInterface::class, [$this->endpoint, $params]);
         $request->setDtoClass(SmscDTO::class);
+        $request->setMethod('POST');
+        $request->setValidationEnable(true);
 
         try {
             $this->logOk(translate('sms.ok'), ['phones' => $phones, 'message' => $message]);
