@@ -10,6 +10,7 @@ namespace Scaleplan\Sms\Exceptions;
 class SmsException extends \Exception
 {
     public const MESSAGE = 'SMS sending error.';
+    public const CODE = 523;
 
     /**
      * SmsException constructor.
@@ -20,6 +21,6 @@ class SmsException extends \Exception
      */
     public function __construct($message = '', $code = 0, \Throwable $previous = null)
     {
-        parent::__construct($message ?: static::MESSAGE, $code, $previous);
+        parent::__construct($message ?: static::MESSAGE, $code ?: static::CODE, $previous);
     }
 }
