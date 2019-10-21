@@ -104,6 +104,6 @@ class ConfirmSender
             throw new SmsException(translate('sms.invalid-code'));
         }
 
-        $this->cache->unlink($key);
+        $this->cache->del($key);
     }
 }
