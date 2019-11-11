@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace Scaleplan\Sms;
 
 use function Scaleplan\Helpers\get_env;
 use Scaleplan\Sms\Exceptions\SmsException;
@@ -9,8 +9,6 @@ use function Scaleplan\Translator\translate;
 
 /**
  * Class ConfirmSender
- *
- * @package App\Services
  */
 class ConfirmSender
 {

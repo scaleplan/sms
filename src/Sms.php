@@ -2,8 +2,8 @@
 
 namespace Scaleplan\Sms;
 
-use App\DTO\Response\SmscDTO;
 use Psr\Log\LoggerInterface;
+use Scaleplan\Sms\DTO\SmscDTO;
 use function Scaleplan\DependencyInjection\get_required_container;
 use function Scaleplan\Helpers\get_required_env;
 use Scaleplan\Http\Exceptions\HttpException;
