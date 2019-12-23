@@ -128,7 +128,7 @@ class Sms implements SmsInterface
             'psw'     => $this->secret,
             'sender'  => $this->sender,
             'phones'  => implode(';', $phones),
-            'message' => $message,
+            'mes' => $message,
             'fmt'     => self::FORMAT_JSON,
         ];
 
@@ -139,8 +139,9 @@ class Sms implements SmsInterface
         $request->setValidationEnable(true);
 
         try {
+            $response = $request->send();
             $this->logOk(translate('sms.ok'), ['phones' => $phones, 'message' => $message]);
-            return $request->send();
+            return $response;
         } catch (HttpException $e) {
             $this->logError(translate('sms.error'), ['phones' => $phones, 'message' => $message]);
             throw $e;

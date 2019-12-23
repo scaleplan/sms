@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Scaleplan\Sms\DTO;
 
@@ -8,8 +9,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class SmscDTO
- *
- * @package App\DTO\Response
  */
 class SmscDTO extends DTO
 {
