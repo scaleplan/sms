@@ -3,15 +3,15 @@
 namespace Scaleplan\Sms;
 
 use Psr\Log\LoggerInterface;
-use Scaleplan\Sms\DTO\SmscDTO;
-use function Scaleplan\DependencyInjection\get_required_container;
-use function Scaleplan\Helpers\get_required_env;
 use Scaleplan\Http\Exceptions\HttpException;
 use Scaleplan\Http\Interfaces\RequestInterface;
 use Scaleplan\Http\RemoteResponse;
+use Scaleplan\Sms\DTO\SmscDTO;
 use Scaleplan\Sms\Interfaces\SmsInterface;
-use function Scaleplan\Translator\translate;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use function Scaleplan\DependencyInjection\get_required_container;
+use function Scaleplan\Helpers\get_required_env;
+use function Scaleplan\Translator\translate;
 
 /**
  * Class Sms
@@ -65,7 +65,8 @@ class Sms implements SmsInterface
         $this->secret = get_required_env('SMSC_PASSWORD');
         $this->sender = $sender ?? get_required_env('SMSC_SENDER');
 
-        $locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']) ?: get_required_env('DEFAULT_LANG');
+        $locale = \Locale::acceptFromHttp((string)($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? ''))
+            ?: get_required_env('DEFAULT_LANG');
         /** @var \Symfony\Component\Translation\Translator $translator */
         $translator = get_required_container(TranslatorInterface::class, [$locale]);
         $translator->addResource('yml', __DIR__ . "/translates/$locale/sms.yml", $locale, 'sms');
@@ -128,7 +129,7 @@ class Sms implements SmsInterface
             'psw'     => $this->secret,
             'sender'  => $this->sender,
             'phones'  => implode(';', $phones),
-            'mes' => $message,
+            'mes'     => $message,
             'fmt'     => self::FORMAT_JSON,
         ];
 
