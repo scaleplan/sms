@@ -9,7 +9,7 @@ namespace Scaleplan\Sms\Exceptions;
  */
 class SmsException extends \Exception
 {
-    public const MESSAGE = 'SMS sending error.';
+    public const MESSAGE = 'Ошибка отправки SMS.';
     public const CODE = 523;
 
     /**
