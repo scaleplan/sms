@@ -64,12 +64,6 @@ class Sms implements SmsInterface
         $this->login = get_required_env('SMSC_LOGIN');
         $this->secret = get_required_env('SMSC_PASSWORD');
         $this->sender = $sender ?? get_required_env('SMSC_SENDER');
-
-        $locale = \Locale::acceptFromHttp(($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? ''))
-            ?: get_required_env('DEFAULT_LANG');
-        /** @var \Symfony\Component\Translation\Translator $translator */
-        $translator = get_required_container(TranslatorInterface::class, [$locale]);
-        $translator->addResource('yml', __DIR__ . "/translates/$locale/sms.yml", $locale, 'sms');
     }
 
     /**
