@@ -1,0 +1,4 @@
+error: Message sending error.
+ok: Message send success.
+code-expired: SMS transaction timeout.
+invalid-code: Invalid confirmation code.

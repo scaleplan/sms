@@ -8,7 +8,6 @@ use Scaleplan\Http\Interfaces\RequestInterface;
 use Scaleplan\Http\RemoteResponse;
 use Scaleplan\Sms\DTO\SmscDTO;
 use Scaleplan\Sms\Interfaces\SmsInterface;
-use Symfony\Contracts\Translation\TranslatorInterface;
 use function Scaleplan\DependencyInjection\get_required_container;
 use function Scaleplan\Helpers\get_required_env;
 use function Scaleplan\Translator\translate;
