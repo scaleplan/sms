@@ -1,4 +1,4 @@
-error: Message sending error.
-ok: Message send success.
+error: "Message ':message' sending error to phone numbers: :phones."
+ok: "Message ':message' send success следующим адресатам: :phones."
 code-expired: SMS transaction timeout.
 invalid-code: Invalid confirmation code.
