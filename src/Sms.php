@@ -130,7 +130,7 @@ class Sms implements SmsInterface
         $request = get_required_container(RequestInterface::class, [$this->endpoint, $params]);
         $request->setDtoClass(SmscDTO::class);
         $request->setMethod('POST');
-        $request->setValidationEnable(true);
+        $request->setValidationEnable(false);
 
         try {
             $response = $request->send();
